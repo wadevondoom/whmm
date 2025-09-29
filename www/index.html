@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>WHMM Wi-Fi Setup</title>
+  <link rel="stylesheet" href="/static/site.css">
+</head>
+<body>
+  <div class="container">
+    <h1>WHMM Wi-Fi Setup</h1>
+    <p>Connect this device to your Wi-Fi network. Use Scan to find nearby SSIDs, then Save.</p>
+
+    <div class="actions">
+      <button id="scanBtn" type="button">Scan</button>
+      <span id="scanStatus" class="muted"></span>
+    </div>
+
+    <form id="wifiForm" method="post" action="/save">
+      <label for="ssid">SSID</label>
+      <select id="ssid" name="ssid" required>
+        <option value="">-- choose or enter manually below --</option>
+      </select>
+
+      <label for="ssidManual">SSID (manual, optional)</label>
+      <input id="ssidManual" type="text" placeholder="Type SSID if not listed">
+
+      <label for="password">Password</label>
+      <input id="password" name="password" type="password" autocomplete="current-password" required>
+
+      <button id="saveBtn" type="submit">Save</button>
+      <div id="msg" class="muted"></div>
+    </form>
+
+    <hr>
+    <p class="muted small">After saving, the device will reboot and try to connect to your Wi-Fi.</p>
+  </div>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>

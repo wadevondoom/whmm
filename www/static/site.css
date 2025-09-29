@@ -1,0 +1,33 @@
+/* Minimal responsive styles (no external CDN) */
+:root {
+  color-scheme: light dark;
+  --bg: #111;
+  --fg: #eee;
+  --muted: #aaa;
+  --accent: #2ea043;
+  --border: #333;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg: #fafafa;
+    --fg: #111;
+    --muted: #666;
+    --border: #ddd;
+  }
+}
+
+html, body { margin: 0; padding: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; background: var(--bg); color: var(--fg); }
+.container { max-width: 640px; margin: 24px auto; padding: 0 16px; }
+
+h1 { margin: 0 0 16px; font-size: 22px; }
+label { display: block; margin: 16px 0 6px; }
+select, input[type="text"], input[type="password"] { width: 100%; padding: 10px 12px; border: 1px solid var(--border); border-radius: 6px; background: transparent; color: var(--fg); box-sizing: border-box; }
+button { padding: 10px 16px; border-radius: 6px; border: 1px solid var(--border); background: var(--accent); color: white; cursor: pointer; }
+button:disabled { opacity: 0.6; cursor: default; }
+
+.actions { display: flex; align-items: center; gap: 12px; margin: 8px 0 16px; }
+.muted { color: var(--muted); }
+.small { font-size: 12px; }
+
+hr { border: none; border-top: 1px solid var(--border); margin: 24px 0; }
